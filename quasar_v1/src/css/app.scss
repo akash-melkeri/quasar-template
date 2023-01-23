@@ -1,1 +1,9 @@
 // app global css in SCSS form
+@font-face {
+  font-family: monteserrat;
+  src: url("../fonts/monteserrat.ttf");
+}
+
+.monteserrat {
+  font-family: 'monteserrat';
+}

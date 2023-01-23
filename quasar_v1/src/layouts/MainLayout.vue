@@ -1,5 +1,5 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
+  <q-layout view="hHh Lpr lFf" class="monteserrat">
     <q-header elevated>
       <q-toolbar>
         <q-btn
@@ -12,10 +12,10 @@
         />
 
         <q-toolbar-title>
-          Quasar App
+          Postio
         </q-toolbar-title>
 
-        <div>Quasar v{{ $q.version }}</div>
+        <div>Right side control</div>
       </q-toolbar>
     </q-header>
 
@@ -23,6 +23,8 @@
       v-model="leftDrawerOpen"
       show-if-above
       bordered
+      overlay
+      behavior="mobile"
     >
       <q-list>
         <q-item-label
@@ -31,11 +33,8 @@
           Essential Links
         </q-item-label>
 
-        <EssentialLink
-          v-for="link in essentialLinks"
-          :key="link.title"
-          v-bind="link"
-        />
+        <!-- list -->
+        list of option
       </q-list>
     </q-drawer>
 
@@ -47,7 +46,6 @@
 
 <script>
 import { defineComponent, ref } from 'vue'
-import EssentialLink from 'components/EssentialLink.vue'
 
 const linksList = [
   {
@@ -97,9 +95,6 @@ const linksList = [
 export default defineComponent({
   name: 'MainLayout',
 
-  components: {
-    EssentialLink
-  },
 
   setup () {
     const leftDrawerOpen = ref(false)
